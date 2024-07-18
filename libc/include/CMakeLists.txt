@@ -157,6 +157,7 @@ add_header_macro(
     .llvm-libc-types.double_t
     .llvm-libc-types.float_t
     .llvm-libc-types.float128
+    .llvm-libc-macros.math_function_macros
 )
 
 add_header_macro(
@@ -173,7 +174,7 @@ file(MAKE_DIRECTORY ${LIBC_INCLUDE_DIR}/arpa)
 
 add_header_macro(
   arpa_inet
-  ../libc/newhdrgen/yaml/arpa_inet.yaml
+  ../libc/newhdrgen/yaml/arpa/arpa_inet.yaml
   arpa/inet.h.def
   arpa/inet.h
   DEPENDS
@@ -703,7 +704,7 @@ if(LIBC_TARGET_OS_IS_GPU)
 
   add_header_macro(
     gpu_rpc
-    ../libc/newhdrgen/yaml/rpc.yaml
+    ../libc/newhdrgen/yaml/gpu/rpc.yaml
     gpu/rpc.h.def
     gpu/rpc.h
     DEPENDS
